@@ -53,14 +53,29 @@ int main (int args, char *argv){
 		printf ("That adds up to $%d.\nAnything else? 0 for no.\n", sumOrder);
 	}
 	int y = 0;
+	int v =0;
+	int i =0;
+	int w=0;
 	int ncp = 0; //number of cheese platers
 	for (y=0; y < 100; y++);{
                 if (orders[y] = "Cheese Plater")
                         ncp++;
         }
 	int nfs = 0; //number of french soup
+	for (v=0; v < 100; v++);{
+                if (orders[v] = "French Onion Soup")
+                        nfs++;
+        }
 	int nr = 0;  //number of the Ribeye
+	for (w=0; w < 100; w++);{
+                if (orders[w] = "Ribeye")
+                        nr++;
+        }
 	int nfb = 0; // number of Fluer Burger
+	for (i=0; i < 100; i++);{
+                if (orders[i] = "Fluer Burger")
+                        nfb++;
+        }
 	int tax = (sumOrder * .0825);
 	int tip = (sumOrder * .20);
 	sumOrder = sumOrder + tip + tax;
@@ -70,17 +85,25 @@ int main (int args, char *argv){
 	printf ("|          Bill         |\n");
 	printf ("=========================\n");
 	printf ("|                       |\n");
-			if (ncp >= 1){
-	printf ("|   %d Cheese Platers   |\n", ncp);}
+			if (ncp){
+	printf ("|   %d Cheese Platers    |\n", ncp);}
+			else{
+	printf ("|                        |\n");}
+	printf ("|                       |\n");
+			if (nfs){
+	printf ("| %d French Onion Soup   |\n", nfs);}
 			else{
 	printf ("|                       |\n");}
 	printf ("|                       |\n");
+			if (nr){
+	printf ("|       %d Ribeye        |\n", nr);}
+			else{
+	printf ("|                       |\n");}
 	printf ("|                       |\n");
-	printf ("|                       |\n");
-	printf ("|                       |\n");
-	printf ("|                       |\n");
-	printf ("|                       |\n");
-	printf ("|                       |\n");
+			if (nfb){
+	printf ("|     %d Fluer Burger    |\n", nfb);}
+			else{
+	printf ("|                       |\n");}
 	printf ("|                       |\n");
 	printf ("|                       |\n");
 	printf ("|       Tax = $%d       |\n",  tax);
