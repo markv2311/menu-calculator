@@ -52,6 +52,15 @@ int main (int args, char *argv){
 		}
 		printf ("That adds up to $%d.\nAnything else? 0 for no.\n", sumOrder);
 	}
+	int y = 0;
+	int ncp = 0; //number of cheese platers
+	for (y=0; y < 100; y++);{
+                if (orders[y] = "Cheese Plater")
+                        ncp++;
+        }
+	int nfs = 0; //number of french soup
+	int nr = 0;  //number of the Ribeye
+	int nfb = 0; // number of Fluer Burger
 	int tax = (sumOrder * .0825);
 	int tip = (sumOrder * .20);
 	sumOrder = sumOrder + tip + tax;
@@ -60,6 +69,20 @@ int main (int args, char *argv){
 	printf ("=========================\n");
 	printf ("|          Bill         |\n");
 	printf ("=========================\n");
+	printf ("|                       |\n");
+			if (ncp >= 1){
+	printf ("|   %d Cheese Platers   |\n", ncp);}
+			else{
+	printf ("|                       |\n");}
+	printf ("|                       |\n");
+	printf ("|                       |\n");
+	printf ("|                       |\n");
+	printf ("|                       |\n");
+	printf ("|                       |\n");
+	printf ("|                       |\n");
+	printf ("|                       |\n");
+	printf ("|                       |\n");
+	printf ("|                       |\n");
 	printf ("|       Tax = $%d       |\n",  tax);
 	printf ("|                       |\n");
 	printf ("|       Tip = $%d       |\n", tip);
