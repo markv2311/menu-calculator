@@ -64,7 +64,7 @@ int main (int args, char *argv){
 	printf ("|                       |\n");
 	printf ("|       Tip = $%d       |\n", tip);
 	printf ("|                       |\n");
-	printf ("|	Total = $%d	 |\n", sumOrder);
+	printf ("|	Total = $%d	|\n", sumOrder);
 	printf ("|                       |\n");
 	printf ("|  ---  Signature  ---  |\n");
 	printf ("|                       |\n");
