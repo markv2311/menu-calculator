@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+
 int main (int args, char *argv){
 
 	printf ("Here is our Menu! Would you like to order?\n");
@@ -16,10 +17,11 @@ int main (int args, char *argv){
 	printf ("|                       |\n");
 	printf ("=========================\n");
 
-	char orders[100]; //to hold the vaules of what was ordered 
+	char *orders[100] = {"Your Order Today: "}; //to hold the vaules of what was ordered
+	char **ptr = orders;
 	int sumOrder=0;
 	int order; // to use the switch statement
-	int x = 0; //used to place the statements in the array correctly.
+	int x = 1; //used to place the statements in the array correctly.
 	int placeOrder = 1;
 	printf ("What would you like to order? ");
 	while (placeOrder){
@@ -27,22 +29,22 @@ int main (int args, char *argv){
 		switch(order)  {
 			case 1:
 			sumOrder += 23;
-			orders[x] = "Cheese Plater";
+			ptr[x] = "Cheese Plater";
 			x++;
 			break;
 			case 2:
 			sumOrder += 16;
-			orders[x] = "French Onion Soup";
+			ptr[x] = "French Onion Soup";
 			x++;
 			break;
 			case 3:
 			sumOrder += 70;
-			orders[x] = "Ribeye";
+			ptr[x] = "Ribeye";
 			x++;
 			break;
 			case 4:
 			sumOrder += 5000;
-			orders[x] = "Fluer Burger";
+			ptr[x] = "Fluer Burger";
 			break;
 			case 0:
 			placeOrder = 0;
@@ -50,16 +52,23 @@ int main (int args, char *argv){
 		}
 		printf ("That adds up to $%d.\nAnything else? 0 for no.\n", sumOrder);
 	}
+	int tax = (sumOrder * .0825);
+	int tip = (sumOrder * .20);
+	sumOrder = sumOrder + tip + tax;
 	printf("Thank you for ordering here is the bill for your meal\n");
 	printf("\n");
-	int tax = (sumOrder * .0825);
-	printf ("Tax = $%d ",  tax);
-	printf ("\n");
-	int tip = (sumOrder * .20);
-	printf ("Tip = $%d", tip);
-	printf("\n");
-	sumOrder = sumOrder + tip + tax;
-	printf("Total = $%d\n", sumOrder);
+	printf ("=========================\n");
+	printf ("|          Bill         |\n");
+	printf ("=========================\n");
+	printf ("|       Tax = $%d       |\n",  tax);
+	printf ("|                       |\n");
+	printf ("|		 Tip = $%d		 |\n", tip);
+	printf ("|                       |\n");
+	printf ("|		Total = $%d	     |\n", sumOrder);
+	printf ("|                       |\n");
+	printf ("|  ---  Signature  ---  |\n");
+	printf ("|                       |\n");
+	printf ("=========================\n");
 
 
 }
