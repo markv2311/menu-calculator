@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 
 int main (int args, char *argv){
@@ -17,7 +18,7 @@ int main (int args, char *argv){
 	printf ("|                       |\n");
 	printf ("=========================\n");
 
-	char *orders[100] = {"Your Order Today: "}; //to hold the vaules of what was ordered
+	char *orders[100] = {}; //to hold the vaules of what was ordered
 	char **ptr = orders;
 	int sumOrder=0;
 	int order; // to use the switch statement
@@ -58,23 +59,27 @@ int main (int args, char *argv){
 	int w=0;
 	int ncp = 0; //number of cheese platers
 	for (y=0; y < 4; y++);{
-                if (orders[y] = "Cheese Plater")
-                        ncp++;
+            int first = strcmp(orders[y], "Cheese Plater");
+			if (first == 1)
+                ncp++;
         }
 	int nfs = 0; //number of french soup
 	for (v=0; v < 4; v++);{
-                if (orders[v] = "French Onion Soup")
-                        nfs++;
+            int second = strcmp(orders[v],"French Onion Soup");
+            if (second == 1)
+				nfs++;
         }
 	int nr = 0;  //number of the Ribeye
 	for (w=0; w < 4; w++);{
-                if (orders[w] = "Ribeye")
-                        nr++;
+            int third = strcmp(orders[w],"Ribeye");
+            if (third ==1)
+				nr++;
         }
 	int nfb = 0; // number of Fluer Burger
 	for (i=0; i < 4; i++);{
-                if (orders[i] = "Fluer Burger")
-                        nfb++;
+            int fourth = strcmp(orders[i], "Fluer Burger");
+            if (fourth == 1)
+				nfb++;
         }
 	int tax = (sumOrder * .0825);
 	int tip = (sumOrder * .20);
@@ -85,25 +90,25 @@ int main (int args, char *argv){
 	printf ("|          Bill         |\n");
 	printf ("=========================\n");
 	printf ("|                       |\n");
-	// 		if (ncp){
-	// printf ("|   %d Cheese Platers    |\n", ncp);}
-	// 		else{
-	// printf ("|                        |\n");}
-	// printf ("|                       |\n");
-	// 		if (nfs){
-	// printf ("| %d French Onion Soup   |\n", nfs);}
-	// 		else{
-	// printf ("|                       |\n");}
-	// printf ("|                       |\n");
-	// 		if (nr){
-	// printf ("|       %d Ribeye        |\n", nr);}
-	// 		else{
-	// printf ("|                       |\n");}
-	// printf ("|                       |\n");
-	// 		if (nfb){
-	// printf ("|     %d Fluer Burger    |\n", nfb);}
-	// 		else{
-	// printf ("|                       |\n");}
+			if (ncp){
+	printf ("|   %d Cheese Platers    |\n", ncp);}
+			else{
+	printf ("|                        |\n");}
+	printf ("|                       |\n");
+			if (nfs){
+	printf ("| %d French Onion Soup   |\n", nfs);}
+			else{
+	printf ("|                       |\n");}
+	printf ("|                       |\n");
+			if (nr){
+	printf ("|       %d Ribeye        |\n", nr);}
+			else{
+	printf ("|                       |\n");}
+	printf ("|                       |\n");
+			if (nfb){
+	printf ("|     %d Fluer Burger    |\n", nfb);}
+			else{
+	printf ("|                       |\n");}
 	printf ("|                       |\n");
 	printf ("|                       |\n");
 	printf ("|       Tax = $%d       |\n",  tax);
