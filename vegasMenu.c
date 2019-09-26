@@ -1,6 +1,6 @@
 #include <stdio.h>
+#include <malloc.h>
 #include <string.h>
-
 
 int main (int args, char *argv){
 
@@ -18,8 +18,15 @@ int main (int args, char *argv){
 	printf ("|                       |\n");
 	printf ("=========================\n");
 
+
 	char *orders[100] = {}; //to hold the vaules of what was ordered
 	char **ptr = orders;
+  
+	char *orders [50]; //to hold the vaules of what was ordered
+	for (int r=0; r < 50; r++){
+		orders[r] = malloc (sizeof(char)*10);
+	}
+  
 	int sumOrder=0;
 	int order; // to use the switch statement
 	int x = 1; //used to place the statements in the array correctly.
@@ -30,22 +37,22 @@ int main (int args, char *argv){
 		switch(order)  {
 			case 1:
 			sumOrder += 23;
-			ptr[x] = "Cheese Plater";
+			strcpy(orders[x], "Cheese Plater");
 			x++;
 			break;
 			case 2:
 			sumOrder += 16;
-			ptr[x] = "French Onion Soup";
+			strcpy(orders[x], "French Onion Soup");
 			x++;
 			break;
 			case 3:
 			sumOrder += 70;
-			ptr[x] = "Ribeye";
+			strcpy(orders[x], "Ribeye");
 			x++;
 			break;
 			case 4:
 			sumOrder += 5000;
-			ptr[x] = "Fluer Burger";
+			strcpy(orders[x], "Fluer Burger");
 			break;
 			case 0:
 			placeOrder = 0;
