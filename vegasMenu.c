@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <malloc.h>
-#include <string.h>
 
 int main (int args, char *argv){
 
@@ -18,14 +16,11 @@ int main (int args, char *argv){
 	printf ("|                       |\n");
 	printf ("=========================\n");
 
-
-	char *orders[100] = {}; //to hold the vaules of what was ordered
-	char **ptr = orders;
-  
 	char *orders [50]; //to hold the vaules of what was ordered
 	for (int r=0; r < 50; r++){
 		orders[r] = malloc (sizeof(char)*10);
 	}
+  char **ptr = orders;
   
 	int sumOrder=0;
 	int order; // to use the switch statement
@@ -37,22 +32,22 @@ int main (int args, char *argv){
 		switch(order)  {
 			case 1:
 			sumOrder += 23;
-			strcpy(orders[x], "Cheese Plater");
+			ptr[x] = "Cheese Plater";
 			x++;
 			break;
 			case 2:
 			sumOrder += 16;
-			strcpy(orders[x], "French Onion Soup");
+			ptr[x] = "French Onion Soup";
 			x++;
 			break;
 			case 3:
 			sumOrder += 70;
-			strcpy(orders[x], "Ribeye");
+			ptr[x] = "Ribeye";
 			x++;
 			break;
 			case 4:
 			sumOrder += 5000;
-			strcpy(orders[x], "Fluer Burger");
+			ptr[x] = "Fluer Burger";
 			break;
 			case 0:
 			placeOrder = 0;
@@ -97,25 +92,25 @@ int main (int args, char *argv){
 	printf ("|          Bill         |\n");
 	printf ("=========================\n");
 	printf ("|                       |\n");
-			if (ncp){
-	printf ("|   %d Cheese Platers    |\n", ncp);}
-			else{
-	printf ("|                        |\n");}
-	printf ("|                       |\n");
-			if (nfs){
-	printf ("| %d French Onion Soup   |\n", nfs);}
-			else{
-	printf ("|                       |\n");}
-	printf ("|                       |\n");
-			if (nr){
-	printf ("|       %d Ribeye        |\n", nr);}
-			else{
-	printf ("|                       |\n");}
-	printf ("|                       |\n");
-			if (nfb){
-	printf ("|     %d Fluer Burger    |\n", nfb);}
-			else{
-	printf ("|                       |\n");}
+	// 		if (ncp){
+	// printf ("|   %d Cheese Platers    |\n", ncp);}
+	// 		else{
+	// printf ("|                        |\n");}
+	// printf ("|                       |\n");
+	// 		if (nfs){
+	// printf ("| %d French Onion Soup   |\n", nfs);}
+	// 		else{
+	// printf ("|                       |\n");}
+	// printf ("|                       |\n");
+	// 		if (nr){
+	// printf ("|       %d Ribeye        |\n", nr);}
+	// 		else{
+	// printf ("|                       |\n");}
+	// printf ("|                       |\n");
+	// 		if (nfb){
+	// printf ("|     %d Fluer Burger    |\n", nfb);}
+	// 		else{
+	// printf ("|                       |\n");}
 	printf ("|                       |\n");
 	printf ("|                       |\n");
 	printf ("|       Tax = $%d       |\n",  tax);
